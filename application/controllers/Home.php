@@ -52,7 +52,8 @@ class Home extends CI_Controller {
         $alamat              = $this->input->post('alamat');
         $propinsi            = $this->input->post('propinsi');
         $kota                = $this->input->post('kota');
-       
+        $full_path           =$this->upload_file('proposal');
+        
        
         $data=array(
             'judul_kegiatan'=>$judul_kegiatan,
@@ -60,7 +61,8 @@ class Home extends CI_Controller {
             'tanggal_pelaksanaan'=>$tanggal_pelaksanaan,
             'alamat'=>$alamat,
             'propinsi'=>$propinsi,
-            'kota'=> $kota
+            'kota'=> $kota,
+            'link_proposal'=>$full_path
                 );
 
         $this->load->model('Modkegiatan');
@@ -70,7 +72,30 @@ class Home extends CI_Controller {
         $this->form_kegiatan($confirm);
     }
 
-   
+
+    public function upload_file($name)
+    {
+            $config['upload_path']          = './dokumen/porposal/';
+            $config['allowed_types']        = 'pdf|gif|jpg|png';
+            $config['file_name']            = 'antarbangsa';
+            
+
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload($name))
+            {
+                    $error = array('error' => $this->upload->display_errors());
+
+            }
+            else
+            {
+                    $data = array('upload_data' => $this->upload->data());
+                    return $this->upload->data('full_path'); 
+                    
+            }
+    }
+
+    
+    
     
   
      
