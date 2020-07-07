@@ -27,11 +27,13 @@ $attributes = array('class' => 'form_kegiatan', 'id' => 'myform');
 echo form_open_multipart('Home/save_form_kegiatan', $attributes);
 
 ?>
+
  
   <div class="form-group">
     <label for="inputAddress">Judul Kegiatan</label>
     <input type="text" name="judul_kegiatan" class="form-control" id="inputAddress">
   </div>
+
   <div class="form-group">
     <label for="inputAddress">Pembicara</label>
     <input type="text" name="pembicara" class="form-control" id="inputAddress" >
@@ -70,11 +72,7 @@ echo form_open_multipart('Home/save_form_kegiatan', $attributes);
   </div>
   
   <button type="submit" class="btn btn-primary">Save</button>
-</form> 
-<?php
-echo form_close();
 
-?>
                 </div>
               </div>             
             </div>
@@ -104,11 +102,12 @@ echo form_close();
                 <!-- <form> -->
                      <div class="form-group">
                      <label for="exampleFormControlFile1">Example file input</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                   <input type="file" name="proposal" id="" class="form-control-file">
                      </div>
                 <!-- </form> -->
                 </div>
               </div>
+              
 
               <!-- Collapsable Card Example -->
               <div class="card shadow mb-4">
@@ -128,6 +127,12 @@ echo form_close();
                   </div>
                 </div>
               </div>
+
+              <?php
+echo form_close();
+
+?>
+  
 
                <!-- Basic Card Example -->
                <div class="card shadow mb-4">
