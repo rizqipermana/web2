@@ -3,6 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
+
+    
+    public function __construct()
+    {
+        parent::__construct();
+            if($this->session->userdata('nama')==""){
+                redirect('Login/index'); 
+            }
+
+    }
+
 	public function index()
 	{        
         $data['name']="Welcome";
@@ -11,7 +22,9 @@ class Home extends CI_Controller {
     }
 
     public function form_kegiatan($confirm='')
-	{        
+	{    
+         
+
         $data['title']="Form Kegiatan";
         $data['confirm']=$confirm;
 
