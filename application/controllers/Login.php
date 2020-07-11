@@ -11,6 +11,7 @@ class Login extends CI_Controller {
     public function auth(){
         $username=$this->input->post('username');
         $password=$this->input->post('password');
+        
        
         $this->load->model('Modlogin');
         $cekuser=$this->Modlogin->ceklogin($username,$password);

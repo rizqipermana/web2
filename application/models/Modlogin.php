@@ -6,7 +6,7 @@ class Modlogin extends CI_Model{
         $this->db->select('*');
         $this->db->from('tbl_user');
         $this->db->where('username',$username);
-        $this->db->where('password',$password);
+        $this->db->where('password',md5($password));
         $query=$this->db->get();
         if($query->num_rows()>0){
             return $query->result();
