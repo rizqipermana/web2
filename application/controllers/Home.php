@@ -79,9 +79,8 @@ class Home extends CI_Controller {
                 );
 
         $this->load->model('Modkegiatan');
-        $this->Modkegiatan->save($data);    
-        
-         
+        $this->Modkegiatan->save($data);   
+        //
         $this->form_kegiatan($confirm);
     }
 
