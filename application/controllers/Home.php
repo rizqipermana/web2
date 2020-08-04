@@ -17,7 +17,6 @@ class Home extends CI_Controller {
 	public function index()
 	{        
         $data['name']="Welcome";
-        // echo "tes";
          $this->template->load('theme','home',$data);
     }
 
