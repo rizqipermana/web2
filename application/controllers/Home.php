@@ -7,6 +7,7 @@ class Home extends CI_Controller {
     
     public function __construct()
     {
+        //update
         parent::__construct();
             if($this->session->userdata('previledge')=="user"){
                 redirect('Login/index'); 
