@@ -87,11 +87,10 @@ class Home extends CI_Controller {
 
     public function upload_file($name)
     {
+        //Define COnfig file
             $config['upload_path']          = './dokumen/porposal/';
             $config['allowed_types']        = 'pdf|gif|jpg|png';
             $config['file_name']            = 'antarbangsa';
-            
-
             $this->load->library('upload', $config);
             if ( ! $this->upload->do_upload($name))
             {
